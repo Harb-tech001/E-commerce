@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dessert Shop</title>
+    <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="input.css">
+  </head>
+  <body class="bg-rose-50 min-h-screen p-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-7">
+    
+      <!-- Dessert Menu -->
+      <div class="md:col-span-2">
+        <h1 class="text-3xl font-bold mb-5">Choose your favourite...</h1>
+        <div
+          id="menu"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- JavaScript will populate desserts here -->
+        </div>
+      </div>
+
+      <!-- Cart Section will be rendered by JS -->
+      <div id="cart-container"></div>
+    </div>
+    <!-- <script src="scripts1.js"></script> -->
+     <script src="script.js"></script>
+  </body>
+</html>
