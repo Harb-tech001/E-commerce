@@ -301,7 +301,7 @@ function openCheckoutModal() {
             <p class="text-md text-gray-500"><span class="text-red-800 text-lg font-medium"> ${
               item.qty
             }x </span> <span class="ml-[10px]">@ $${item.price.toFixed(
-      2
+               2
     )} </span> </p>
           </div>
         </div>
