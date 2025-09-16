@@ -135,14 +135,14 @@ function renderMenu() {
       item.category}" class="w-full h-60 object-cover rounded-lg mb-4 ${
       cartItem ? "outline-3 outline-[#be4324]" : ""} ">
       ${cartItem
-        ? `<button class="absolute bottom-[-20px] left-[50px] lg:left-[55px] flex space-x-4 lg:space-x-8  bg-[#be4324] px-2 lg:px-4 py-1 lg:py-2 rounded-full">
+        ? `<button class="absolute bottom-[-20px] left-[85px] lg:left-[55px] flex space-x-9 lg:space-x-8  bg-[#be4324] px-2 lg:px-4 py-1 lg:py-2 rounded-full">
               <img onclick="updateQty(${item.id}, -1)" src=${"./images/icon-decrement-quantity.svg"} class="border border-[#ad8985] rounded-[100%] lg:p-1.5 p-1">
               <span class="font-semibold text-white">${cartItem.qty}</span>
               <img onclick="updateQty(${
                 item.id
               }, 1)" src=${"./images/icon-increment-quantity.svg"} class="border border-[#ad8985] rounded-[100%] lg:p-1.5 p-1">
            </button>`
-        : `<button onclick="addToCart(${item.id})" class="absolute bottom-[-20px] left-[50px] lg:left-[55px] flex space-x-2 bg-white text-black border border-gray-400 px-6 py-2 rounded-[20px]">
+        : `<button onclick="addToCart(${item.id})" class="absolute bottom-[-20px]  left-[70px] lg:left-[55px] flex space-x-4  bg-white text-black border border-gray-400 px-6 py-2 rounded-[20px]">
               <img src=${"./images/icon-add-to-cart.svg"} alt="cart-img"> 
               <span class="font-medium">Add to Cart</span>
            </button>`
@@ -226,11 +226,11 @@ function renderCart() {
       <span>Order Total</span>
       <span class="font-bold text-[25px]">$${total.toFixed(2)}</span>
     </div>
-    <div class="bg-rose-50 flex items-center justify-center space-x-2.5 w-[16rem] lg:w-[15rem] h-[5rem] lg:h-[20rem] py-2 px-2 ml-[30px] mt-5 rounded-[5px]"> 
+    <div class="bg-rose-50 flex items-center justify-center space-x-2 w-10rem lg:w-[15rem] h-[5rem] lg:h-[20rem] py-2 ml-15px lg:ml-[25px] mt-5 rounded-[5px]"> 
         <img src=${"./images/icon-carbon-neutral.svg"}>
         <p class=" text-sm text-[#867472] text-center">This is a <span class="font-medium"> carbon-neutral </span> delivery</p>
     </div>
-       <button onclick="openCheckoutModal()" class="bg-red-700 hover:bg-red-800 text-white w-[16rem] lg:w-[15rem] h-[3rem] py-2 mt-4 ml-[30px] rounded-[25px] font-semibold">
+       <button onclick="openCheckoutModal()" class="bg-red-700 hover:bg-red-800 text-white w-full lg:w-[15rem] h-[3rem] py-2 mt-4 ml-15px lg:ml-[25px] rounded-[25px] font-semibold">
       Confirm Order
     </button>
   `;
@@ -287,14 +287,14 @@ function openCheckoutModal() {
     itemsHTML += `
       <div class="flex justify-between items-center border-t-gray-300">
         <div class="flex items-center space-x-3">
-          <img src="${item.image}" alt="${
-      item.name}" class="w-12 h-12 rounded-lg object-cover">
+          <img src="${item.image.desktop}" alt="${item.name
+    }" class="w-12 h-12 rounded-lg object-cover">
           <div class="text-left">
             <p class="font-semibold text-gray-800">${item.name}</p>
             <p class="text-md text-gray-500"><span class="text-red-800 text-lg font-medium"> ${
               item.qty
             }x </span> <span class="ml-[10px]">@ $${item.price.toFixed(
-               2
+      2
     )} </span> </p>
           </div>
         </div>
@@ -318,11 +318,11 @@ function openCheckoutModal() {
       </button>
 
         <div class="">
-          <img src=${"./images/icons/success-check.svg"} alt="success" class="w-10 h-10 mb-3">
+          <img src=${"./images/icon-order-confirmed.svg"} alt="success" class="w-10 h-10 mb-3">
           <h2 class="text-2xl font-bold text-gray-900 mb-2">Order Confirmed</h2>
           <p class="text-gray-500 mb-6">We hope you enjoy your food!</p>
         </div>
-        
+      
 
         <div class="w-full bg-rose-50 rounded-lg p-4 mb-6 space-y-4">
           ${itemsHTML}
